@@ -22,7 +22,9 @@
   </div>
   <div class="front">
     <div class="front-vid">
-      <video src="Landing_video.mp4" id="landing"></video>
+      <video autoplay loop muted id="landing">
+        <source src="Landing_video.mp4">
+      </video>
     </div>
   </div>
   <div class="about-wrap">
@@ -35,14 +37,18 @@
       a design-forward selection of a cosmopolitan boutique, we are committed
       to beauty, excellence and integrity.
     </div>
-    <div class="zoom-vid" autoplay muted>
-      <video id="zoom-vid" src="Zoom_video.mp4"></video>
+    <div class="zoom-vid">
+      <video autoplay loop muted id="zoom-vid">
+        <source src="Zoom_video.mp4">
+      </video>
     </div>
   </div>
 
   <div class="brands">
     <div class="video">
-      <video src="glasses.mp4" id="glasses"></video>
+      <video autoplay loop muted id="glasses">
+        <source src="glasses.mp4">
+      </video>
     </div>
 
     <div class="text-b">
@@ -56,7 +62,7 @@
         selection, our glasses are competitively priced and address a full
         range of budgets and needs.
       </div>
-      <h2 class="Links">
+      <h2 class="links">
         <a href="https://www.theo.be/" target="_blank">Theo</a>
         <br />
         <a href="https://anneetvalentin.com/en/" target="_blank">Anne &amp; Valentine</a>
@@ -142,13 +148,15 @@
 
 <style type="text/css">
   .front {
+    width: 100%;
+    height: auto;
     padding-bottom: none;
   }
 
   #landing {
     width: 100%;
     height: auto;
-    padding-bottom: 0%;
+    overflow: hidden;
   }
 
   .about-wrap {
@@ -161,10 +169,10 @@
   .text {
     float: left;
     width: 49%;
-    padding-left: 10%;
-    padding-top: 10%;
+    padding-left: 2%;
+    padding-top: 2%;
     max-width: 40%;
-    font: italic 1.2rem "Fira Sans", serif;
+    font: italic 1.6rem "Fira Sans", serif;
   }
 
   .zoom-vid {
@@ -187,7 +195,6 @@
     overflow: hidden;
     width: 100%;
     background-color: rgb(60 35 19);
-    font: italic 1.2rem "Fira Sans", serif;
   }
 
   .glasses {
@@ -205,13 +212,18 @@
     padding-top: 10%;
     max-width: 40%;
     padding-right: 5%;
-    font: italic 1.2rem "Fira Sans", serif;
   }
-
+  .texts{
+    font: italic 1.6rem "Fira Sans", serif;
+  }
+  .links{
+    font: italic 1.6rem "Fira Sans", serif;
+  }
   .vib {
     overflow: hidden;
     width: 100%;
     background-color: rgb(158, 110, 90);
+    position: relative;
   }
 
   .vibe-text {
@@ -220,15 +232,20 @@
     padding-left: 10%;
     padding-top: 10%;
     max-width: 35%;
-    font: italic 1.2rem "Fira Sans", serif;
+    position: sticky;
+    top: 0;
+    bottom: auto;
+    font: italic 1.6rem "Fira Sans", serif;
   }
   .vib-img {
     margin-left: 50%;
+    position: relative;
   }
 
   #vib-img {
     width: auto;
-    height: 80%;
+    height: 60%;
+    max-height: fit-content;
     object-fit: cover;
   }
 
@@ -275,11 +292,11 @@
   #maps {
     height: 100%;
   }
+  
 
   .wrapper {
     color: #ffffff;
     padding: 0%;
-    /* font: italic 1.2rem "Fira Sans", serif; */
   }
 
   a:link {
@@ -366,4 +383,5 @@
       transform: translateX(-100%);
     }
   }
+  
 </style>
