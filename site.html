@@ -158,6 +158,17 @@
                 console.error('Element with ID "dynamicText" not found.');
             }
         }
+        function resizeScrollText(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                const vw = window.innerWidth;
+                const vh = window.innerHeight;
+                const fontSize = Math.min(vw, vh) * 0.025;
+                element.style.fontSize = fontSize + 'px';
+            } else {
+                console.error('Element with ID "dynamicText" not found.');
+            }
+        }
 
         // Call resizeText initially when the page loads
         resizeText('text-1');
@@ -168,6 +179,8 @@
         window.addEventListener("resize",resizeText('text-3'));
         resizeText('text-4');
         window.addEventListener("resize",resizeText('text-4'));
+        resizeScrollText('scroll-text');
+        window.addEventListener("resize", resizeScrollText('scroll-text'));
 
     </script>
 </div>
