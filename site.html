@@ -152,8 +152,9 @@
             if (element) {
                 const vw = window.innerWidth;
                 const vh = window.innerHeight;
-                const fontSize = Math.min(vw, vh) * 0.03;
+                const fontSize = Math.min(vw, vh) * 0.025;
                 element.style.fontSize = fontSize + 'px';
+                element.style.fontFamily = 'DM Mono, monospace';
             } else {
                 console.error('Element with ID "dynamicText" not found.');
             }
@@ -218,6 +219,7 @@
 
   .zoom-vid {
     margin-left: 50%;
+  display: flex;
   }
 
   #zoom-vid {
@@ -240,6 +242,7 @@
 
   .glasses {
     size: 50%;
+    display: flex;
   }
 
   .video {
@@ -270,6 +273,7 @@
   }
   .vib-img {
     margin-left: 50%;
+    display: flex;
 
   }
 
@@ -365,7 +369,6 @@
   }
 
   #scroll-text {
-    font-size: 1.25rem;
     font-weight: 300;
     line-height: 1.4;
     overflow: hidden;
@@ -414,5 +417,51 @@
       transform: translateX(-100%);
     }
   }
+
+  /* 768px width */
+  @media (max-width: 768px) {
+ .zoom-vid, .glasses {
+   float: none; /* Reset float property */
+   display: block; /* Display as block element */
+   width: 100%; /* Set width to 100% */
+   margin: 0; /* Reset margins */
+   text-align: center; /* Center the content */
+ }
+
+ #zoom-vid, #glasses {
+   width: 100%;
+   height: auto;
+   object-fit: contain; /* Ensure the vertical video is contained properly */
+   margin: 0; /* Reset margins */
+ }
+
+ .text, .text-b, .vibe-text, .ending-text{
+   width: 100%; /* Set text width to 100% */
+   padding-left: 5%;
+   padding-right: 5%;
+   float: none; /* Reset float property */
+   margin: 0; /* Reset margins */
+ }
+ .vib-img {
+   float: none; /* Reset float property */
+   display: block; /* Display as block element */
+   width: 50%; /* Set width to 100% */
+   text-align: center; /* Center the content */
+ }
+
+  .vibe-text {
+   width: 100%; /* Set text width to 100% */
   
+   float: none; /* Reset float property */
+ }
+  
+ @media (max-width: 480px) {
+
+ .text, .text-b, .vibe-text {
+   padding-left: 3%;
+   padding-right: 3%;
+ }
+}
+}
+
 </style>
